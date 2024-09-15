@@ -5,7 +5,7 @@ permissions:
   id-token: write
   contents: read
 jobs:
-  Explore-GitHub-Actions:
+  Run-Terraform-Plan:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -30,4 +30,20 @@ jobs:
       - name: Terraform plan
         run: |
           cd terraform && terraform plan
+      - name: Save data
+        uses: actions/upload-artifact@master
+        with:
+          name: all-tf-files
+          path: ./terraform
+
+  Terraform-Apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve terraform config
+        uses: actions/download-artifact@master
+        with:
+          name: all-tf-files
+          path: ./terraform
+      - name: Terraform apply
+        run: cd terraform && terraform apply
       
