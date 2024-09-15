@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: all-tf-files
-          path: ./terraform
+          path: .
           include-hidden-files: true
 
   Terraform-Apply:
@@ -45,7 +45,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: all-tf-files
-          path: ./terraform
+          path: .
       - name: Terraform apply
         run: cd terraform && terraform apply
       
