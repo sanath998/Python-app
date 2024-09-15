@@ -1,3 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket         	   = "testbackendterrform"
+    key                = "state/terraform.tfstate"
+    region         	   = "ap-south-1"
+  }
+}
+
+
 resource "aws_instance" "ec2" {
   count                       = var.ec2_should_be_created ? 1 : 0
 
