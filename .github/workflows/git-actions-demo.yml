@@ -24,9 +24,10 @@ jobs:
           aws-region: ap-south-1
           role-to-assume: arn:aws:iam::796475405487:role/Github_actions_role
       - name: Terraform init
-        run: terraform init
-      - name: Terraform plan
         run: |
           cd terraform
+          terraform init
+      - name: Terraform plan
+        run: |
           terraform plan
       
