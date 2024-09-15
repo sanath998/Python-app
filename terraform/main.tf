@@ -6,8 +6,6 @@ resource "aws_instance" "ec2" {
 
   associate_public_ip_address = true
 
-  key_name                    = aws_key_pair.ec2_key_pair.key_name
-
   tags = {
     Name = var.ec2_name
   }
