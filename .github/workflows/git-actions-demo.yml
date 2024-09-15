@@ -29,5 +29,5 @@ jobs:
           terraform init
       - name: Terraform plan
         run: |
-          terraform plan
+          cd terraform && terraform plan
       
