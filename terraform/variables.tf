@@ -15,12 +15,6 @@ variable "ec2_name" {
   default     = "Free Tier EC2"
 }
 
-variable "ec2_security_group_name" {
-  description = "The Name of the EC2 Security Group"
-  type        = string
-  default     = "Free Tier EC2 Security Group"
-}
-
 variable "ec2_security_group_description" {
   description = "The Description of the EC2 Security Group"
   type        = string
@@ -39,26 +33,6 @@ variable "ec2_instance_type" {
   default     = "t2.micro" # Free Tier eligible
 }
 
-variable "vpc_id" {
-  description = "The ID of the VPC"
-  type        = string
-}
-
-variable "public_subnet_id" {
-  description = "The ID of the Public Subnet"
-  type        = string
-}
-
-variable "ec2_ssh_key_name" {
-  description = "The SSH Key Name"
-  type        = string
-  default     = "free-tier-ec2-key"
-}
-
-variable "ec2_ssh_public_key_path" {
-  description = "The local path to the SSH Public Key"
-  type        = string
-}
 /* 
 variable "aws_access_key" {
     description = "Value of the AWS Access key"
