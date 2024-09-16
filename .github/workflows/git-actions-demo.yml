@@ -55,5 +55,5 @@ jobs:
           cd terraform
           terraform init
       - name: Terraform apply
-        run: cd terraform && terraform apply
+        run: cd terraform && terraform apply --auto-approve
       
