@@ -35,7 +35,6 @@ jobs:
         with:
           name: all-tf-files
           path: .
-          include-hidden-files: true
 
   Terraform-Apply:
     runs-on: ubuntu-latest
