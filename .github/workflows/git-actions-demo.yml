@@ -51,6 +51,10 @@ jobs:
         with:
           name: all-tf-files
           path: .
+      - name: Terraform init
+        run: |
+          cd terraform
+          terraform init
       - name: Terraform apply
         run: cd terraform && terraform apply
       
